@@ -12,23 +12,15 @@ pipeline {
         stage('Build') {
             steps {
                 // Run Maven build
-                sh 'mvn clean install'
+                bat 'mvn clean install'
             }
         }
         
         stage('Test') {
             steps {
                 // Run Maven tests
-                sh 'mvn test'
+                bat 'mvn test'
             }
-        }
-    }
-    
-    post {
-        always {
-            // Archive test results and logs
-            archiveArtifacts artifacts: '**/target/*.jar', allowEmptyArchive: true
-            junit 'target/surefire-reports/*.xml'
         }
     }
 }
