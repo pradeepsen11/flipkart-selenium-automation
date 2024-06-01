@@ -14,6 +14,7 @@ public class HomePageObject {
     }
 
     public void closeLoginPopup() {
+    	//click on cancle button on login popup
         homePage.loginPopupCancelButton.click();
     }
 
