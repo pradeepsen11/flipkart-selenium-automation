@@ -21,5 +21,6 @@ public class HomePageObject {
         homePage.searchBox.sendKeys(productName);
         homePage.searchButton.click();
         System.out.println("Clicked on search button");
+        System.out.println("Process Done");
     }
 }
