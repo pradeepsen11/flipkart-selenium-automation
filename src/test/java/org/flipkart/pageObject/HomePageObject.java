@@ -18,9 +18,9 @@ public class HomePageObject {
     }
 
     public void searchProduct(String productName) {
+    	//send search value
         homePage.searchBox.sendKeys(productName);
+        //click on search button
         homePage.searchButton.click();
-        System.out.println("Clicked on search button");
-        System.out.println("Process Done");
     }
 }
