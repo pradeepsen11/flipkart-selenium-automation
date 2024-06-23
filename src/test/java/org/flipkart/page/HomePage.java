@@ -7,20 +7,20 @@ import org.openqa.selenium.support.PageFactory;
 
 public class HomePage {
 
-	 WebDriver driver;
+	WebDriver driver;
 
-	    public HomePage(WebDriver driver) {
-	        this.driver = driver;
-	        PageFactory.initElements(driver, this);
-	    }
+	public HomePage(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
 
-	    @FindBy(css = "button._2KpZ6l._2doB4z")
-	    public WebElement loginPopupCancelButton;
+	@FindBy(css = "button._2KpZ6l._2doB4z")
+	public WebElement loginPopupCancelButton;
 
-	    @FindBy(xpath = "//*[@id=\"container\"]/div/div[1]/div/div/div/div/div[1]/div/div[1]/div/div[1]/div[1]/header/div[1]/div[2]/form/div/div/input")
-	    public WebElement searchBox;
+	@FindBy(xpath = "//input[@placeholder='Search for Products, Brands and More']")
+	public WebElement searchBox;
 
-	    @FindBy(xpath = "//*[@id=\"container\"]/div/div[1]/div/div/div/div/div[1]/div/div[1]/div/div[1]/div[1]/header/div[1]/div[2]/form/div/button")
-	    public WebElement searchButton;
-	    
+	@FindBy(xpath = "//*/form/div/button")
+	public WebElement searchButton;
+
 }

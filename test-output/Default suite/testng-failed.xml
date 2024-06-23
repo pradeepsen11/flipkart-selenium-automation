@@ -5,8 +5,7 @@
     <classes>
       <class name="org.flipkart.tests.HomePageTest">
         <methods>
-          <include name="beforeClass"/>
-          <include name="test"/>
+          <include name="searchProduct"/>
         </methods>
       </class> <!-- org.flipkart.tests.HomePageTest -->
     </classes>
