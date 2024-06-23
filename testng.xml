@@ -5,10 +5,18 @@
 		<listener class-name="org.flipkart.generic.TestListener" />
 	</listeners>
 
+<<<<<<< Updated upstream
 	<test thread-count="5" name="Test">
 		<classes>
 			<class name="org.flipkart.tests.HomePageTest" />
 		</classes>
 	</test> <!--
 	Test -->
+=======
+	<test name="MyTests">
+		<classes>
+			<class name="org.flipkart.tests.HomePageTest" />
+		</classes>
+	</test>
+>>>>>>> Stashed changes
 </suite> <!--Suite -->

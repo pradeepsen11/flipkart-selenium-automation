@@ -21,4 +21,20 @@ public class HomePageTest extends BaseTest {
 		homePageObject.searchProduct("Realme Phone");
 	}
 	
+<<<<<<< Updated upstream
+=======
+
+	@Test
+    public void test() {
+        HomePageObject homePageObject = new HomePageObject(driver);
+        homePageObject.closeLoginPopup();
+    }
+	
+	@Test
+    public void test1() {
+        HomePageObject homePageObject = new HomePageObject(driver);
+        homePageObject.searchProduct("Realme Phone");
+    }
+
+>>>>>>> Stashed changes
 }

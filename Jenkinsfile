@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout the code from the Git repository
-                git url: 'https://github.com/pradeepsen11/flipkartHome-selenium-automation.git', branch: 'main'
+                git url: 'https://github.com/pradeepsen11/flipkartHome-selenium-automation.git', branch: 'flipkart'
             }
         }
         

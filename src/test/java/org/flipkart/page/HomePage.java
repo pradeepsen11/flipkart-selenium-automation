@@ -17,10 +17,19 @@ public class HomePage {
 	@FindBy(css = "button._2KpZ6l._2doB4z")
 	public WebElement loginPopupCancelButton;
 
+<<<<<<< Updated upstream
 	@FindBy(xpath = "//input[@placeholder='Search for Products, Brands and More']")
 	public WebElement searchBox;
 
 	@FindBy(xpath = "//*/form/div/button")
 	public WebElement searchButton;
 
+=======
+	    @FindBy(xpath = "//input[@placeholder='Search for products, brands and more']")
+	    public WebElement searchBox;
+
+	    @FindBy(xpath = "//*/form/div/button")
+	    public WebElement searchButton;
+	    
+>>>>>>> Stashed changes
 }

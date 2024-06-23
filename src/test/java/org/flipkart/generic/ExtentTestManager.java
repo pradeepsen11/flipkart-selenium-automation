@@ -6,7 +6,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ExtentTestManager {
+<<<<<<< Updated upstream
 	static Map<Integer, ExtentTest> extentTestMap = new HashMap<>();
+=======
+    static Map<Integer, ExtentTest> extentTestMap = new HashMap<>();
+>>>>>>> Stashed changes
     static ExtentReports extent = ExtentManager.getReporter();
 
     public static synchronized ExtentTest getTest() {

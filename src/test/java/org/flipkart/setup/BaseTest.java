@@ -25,15 +25,26 @@ public class BaseTest {
 		driver.manage().deleteAllCookies();
 	}
 
+<<<<<<< Updated upstream
 	@AfterSuite
+=======
+//	@AfterClass
+>>>>>>> Stashed changes
 	public void afterClass() {
 		if (driver != null) {
 			driver.manage().deleteAllCookies();
 			driver.quit();
 		}
 	}
+<<<<<<< Updated upstream
 
 	public WebDriver getDriver() {
 		return driver;
 	}
+=======
+	
+	public WebDriver getDriver() {
+        return driver;
+    }
+>>>>>>> Stashed changes
 }

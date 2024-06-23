@@ -5,7 +5,10 @@ import org.flipkart.page.HomePage;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+<<<<<<< Updated upstream
 import org.testng.log4testng.Logger;
+=======
+>>>>>>> Stashed changes
 
 import com.relevantcodes.extentreports.LogStatus;
 
@@ -20,6 +23,7 @@ public class HomePageObject{
 		homePage=new HomePage(driver);;
 	}
 
+<<<<<<< Updated upstream
 	public void closeLoginPopup() {
 		try {
 			ExtentTestManager.getTest().log(LogStatus.INFO, "Close login popup if appeared");
@@ -47,4 +51,30 @@ public class HomePageObject{
 			Assert.fail("Failed while searching the product");
 		}
 	}
+=======
+    public void closeLoginPopup() {
+    	//click on cancle button on login pop-up if displayed
+    	try {
+			if(homePage.loginPopupCancelButton.isDisplayed()) {
+				homePage.loginPopupCancelButton.click();
+			}
+		} catch (NoSuchElementException e) {
+			System.out.println("Popup did not appear");
+		}
+    }
+
+    public void searchProduct(String productName) {
+    	try {
+			//send search value
+			homePage.searchBox.sendKeys(productName);
+			//click on search button
+			homePage.searchButton.click();
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			Assert.fail("Failed while searching the product");
+		}
+    }
+>>>>>>> Stashed changes
 }
