@@ -1,48 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< Updated upstream
-<testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
-  <reporter-output>
-  </reporter-output>
-  <suite started-at="2024-06-23T19:48:19 IST" name="Default suite" finished-at="2024-06-23T19:48:22 IST" duration-ms="2884">
-    <groups>
-    </groups>
-    <test started-at="2024-06-23T19:48:19 IST" name="Default test" finished-at="2024-06-23T19:48:22 IST" duration-ms="2884">
-      <class name="org.flipkart.tests.HomePageTest">
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:org.flipkart.tests.HomePageTest@121314f7]" started-at="2024-06-23T19:48:14 IST" name="beforeClass" finished-at="2024-06-23T19:48:19 IST" duration-ms="4852" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeClass -->
-        <test-method signature="searchProduct()[pri:2, instance:org.flipkart.tests.HomePageTest@121314f7]" started-at="2024-06-23T19:48:19 IST" name="searchProduct" finished-at="2024-06-23T19:48:22 IST" duration-ms="2840" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- searchProduct -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:org.flipkart.tests.HomePageTest@121314f7]" started-at="2024-06-23T19:48:22 IST" name="afterClass" finished-at="2024-06-23T19:48:22 IST" duration-ms="204" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterClass -->
-=======
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-06-23T17:12:05 IST" name="Default suite" finished-at="2024-06-23T17:12:24 IST" duration-ms="18683">
+  <suite started-at="2024-06-23T21:03:38 IST" name="Suite" finished-at="2024-06-23T21:03:52 IST" duration-ms="14124">
     <groups>
     </groups>
-    <test started-at="2024-06-23T17:12:05 IST" name="Default test" finished-at="2024-06-23T17:12:24 IST" duration-ms="18683">
+    <test started-at="2024-06-23T21:03:38 IST" name="Test" finished-at="2024-06-23T21:03:52 IST" duration-ms="14124">
       <class name="org.flipkart.tests.HomePageTest">
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:org.flipkart.tests.HomePageTest@7d4f9aae]" started-at="2024-06-23T17:12:05 IST" name="beforeClass" finished-at="2024-06-23T17:12:11 IST" duration-ms="5488" status="PASS">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:org.flipkart.tests.HomePageTest@46292372]" started-at="2024-06-23T21:03:32 IST" name="beforeClass" finished-at="2024-06-23T21:03:38 IST" duration-ms="6013" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method signature="test()[pri:0, instance:org.flipkart.tests.HomePageTest@7d4f9aae]" started-at="2024-06-23T17:12:11 IST" name="test" finished-at="2024-06-23T17:12:21 IST" duration-ms="10088" status="PASS">
+        <test-method signature="closeLoginPopup()[pri:1, instance:org.flipkart.tests.HomePageTest@46292372]" started-at="2024-06-23T21:03:38 IST" name="closeLoginPopup" finished-at="2024-06-23T21:03:48 IST" duration-ms="10350" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test -->
-        <test-method signature="test1()[pri:0, instance:org.flipkart.tests.HomePageTest@7d4f9aae]" started-at="2024-06-23T17:12:21 IST" name="test1" finished-at="2024-06-23T17:12:24 IST" duration-ms="3053" status="PASS">
+        </test-method> <!-- closeLoginPopup -->
+        <test-method signature="searchProduct()[pri:2, instance:org.flipkart.tests.HomePageTest@46292372]" started-at="2024-06-23T21:03:49 IST" name="searchProduct" finished-at="2024-06-23T21:03:52 IST" duration-ms="3205" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test1 -->
->>>>>>> Stashed changes
+        </test-method> <!-- searchProduct -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:org.flipkart.tests.HomePageTest@46292372]" started-at="2024-06-23T21:03:52 IST" name="afterClass" finished-at="2024-06-23T21:03:52 IST" duration-ms="173" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
       </class> <!-- org.flipkart.tests.HomePageTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

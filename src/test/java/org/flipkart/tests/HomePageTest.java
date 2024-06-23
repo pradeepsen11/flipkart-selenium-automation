@@ -9,32 +9,15 @@ public class HomePageTest extends BaseTest {
 
 	@Test(priority = 1)
 	public void closeLoginPopup() {
-		HomePageObject homePageObject = new HomePageObject(driver);
+		HomePageObject homePageObject = new HomePageObject();
 		ExtentTestManager.startTest("closeLoginPopup", "Test1");
 		homePageObject.closeLoginPopup();
 	}
 
 	@Test(priority = 2)
 	public void searchProduct() {
-		HomePageObject homePageObject = new HomePageObject(driver);
+		HomePageObject homePageObject = new HomePageObject();
 		ExtentTestManager.startTest("searchProduct", "Test2");
 		homePageObject.searchProduct("Realme Phone");
 	}
-	
-<<<<<<< Updated upstream
-=======
-
-	@Test
-    public void test() {
-        HomePageObject homePageObject = new HomePageObject(driver);
-        homePageObject.closeLoginPopup();
-    }
-	
-	@Test
-    public void test1() {
-        HomePageObject homePageObject = new HomePageObject(driver);
-        homePageObject.searchProduct("Realme Phone");
-    }
-
->>>>>>> Stashed changes
 }

@@ -1,29 +1,18 @@
 package org.flipkart.pageObject;
 
+import org.apache.log4j.Logger;
 import org.flipkart.generic.ExtentTestManager;
 import org.flipkart.page.HomePage;
+import org.flipkart.setup.BaseTest;
 import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-<<<<<<< Updated upstream
-import org.testng.log4testng.Logger;
-=======
->>>>>>> Stashed changes
-
 import com.relevantcodes.extentreports.LogStatus;
 
-public class HomePageObject{
+public class HomePageObject extends BaseTest {
 
-	WebDriver driver;
-	HomePage homePage;
-	static Logger log = Logger.getLogger(HomePage.class.getNestHost());
+	HomePage homePage = new HomePage(driver);
+	static Logger log = Logger.getLogger(HomePage.class.getName());
 
-	public HomePageObject(WebDriver driver) {
-		this.driver = driver;
-		homePage=new HomePage(driver);;
-	}
-
-<<<<<<< Updated upstream
 	public void closeLoginPopup() {
 		try {
 			ExtentTestManager.getTest().log(LogStatus.INFO, "Close login popup if appeared");
@@ -51,30 +40,5 @@ public class HomePageObject{
 			Assert.fail("Failed while searching the product");
 		}
 	}
-=======
-    public void closeLoginPopup() {
-    	//click on cancle button on login pop-up if displayed
-    	try {
-			if(homePage.loginPopupCancelButton.isDisplayed()) {
-				homePage.loginPopupCancelButton.click();
-			}
-		} catch (NoSuchElementException e) {
-			System.out.println("Popup did not appear");
-		}
-    }
 
-    public void searchProduct(String productName) {
-    	try {
-			//send search value
-			homePage.searchBox.sendKeys(productName);
-			//click on search button
-			homePage.searchButton.click();
-			
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			Assert.fail("Failed while searching the product");
-		}
-    }
->>>>>>> Stashed changes
 }

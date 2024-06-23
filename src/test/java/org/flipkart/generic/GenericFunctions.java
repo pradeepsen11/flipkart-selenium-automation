@@ -11,7 +11,6 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
 public class GenericFunctions {
-<<<<<<< Updated upstream
 	public static String currentDateAndTime() {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd_HHmmss");
 		return sdf.format(new Date());
@@ -34,27 +33,3 @@ public class GenericFunctions {
 		}
 	}
 }
-=======
-    public static String currentDateAndTime() {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd_HHmmss");
-        return sdf.format(new Date());
-    }
-
-    public static String formatTime(long millis) {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        return sdf.format(new Date(millis));
-    }
-
-    public static String captureScreenshot(WebDriver driver) {
-        try {
-            TakesScreenshot ts = (TakesScreenshot) driver;
-            File source = ts.getScreenshotAs(OutputType.FILE);
-            byte[] fileContent = Files.readAllBytes(source.toPath());
-            return "data:image/png;base64," + Base64.getEncoder().encodeToString(fileContent);
-        } catch (IOException e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
-}
->>>>>>> Stashed changes
