@@ -4,19 +4,15 @@
   <listeners>
     <listener class-name="org.flipkart.generic.TestListener"/>
   </listeners>
-  <test thread-count="5" name="MyTests(failed)">
+  <test thread-count="5" name="Test(failed)">
     <classes>
       <class name="org.flipkart.tests.HomePageTest">
         <methods>
-<<<<<<< Updated upstream
-          <include name="searchProduct"/>
-=======
           <include name="beforeClass"/>
+          <include name="closeLoginPopup"/>
           <include name="afterClass"/>
-          <include name="test"/>
->>>>>>> Stashed changes
         </methods>
       </class> <!-- org.flipkart.tests.HomePageTest -->
     </classes>
-  </test> <!-- MyTests(failed) -->
+  </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

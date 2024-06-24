@@ -1,14 +1,7 @@
 package org.flipkart.generic;
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
 import java.text.SimpleDateFormat;
-import java.util.Base64;
 import java.util.Date;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
 
 public class GenericFunctions {
 	public static String currentDateAndTime() {
@@ -21,15 +14,11 @@ public class GenericFunctions {
 		return sdf.format(new Date(millis));
 	}
 
-	public static String captureScreenshot(WebDriver driver) {
-		try {
-			TakesScreenshot ts = (TakesScreenshot) driver;
-			File source = ts.getScreenshotAs(OutputType.FILE);
-			byte[] fileContent = Files.readAllBytes(source.toPath());
-			return "data:image/png;base64," + Base64.getEncoder().encodeToString(fileContent);
-		} catch (IOException e) {
-			e.printStackTrace();
-			return null;
-		}
-	}
+	public static String overallExecutionTime(long startTime, long endTime) {
+        long duration = endTime - startTime;
+        long seconds = (duration / 1000) % 60;
+        long minutes = (duration / (1000 * 60)) % 60;
+        long hours = (duration / (1000 * 60 * 60)) % 24;
+        return String.format("%02d:%02d:%02d", hours, minutes, seconds);
+    }
 }

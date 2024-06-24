@@ -14,12 +14,12 @@ public class HomePage {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(css = "button._2KpZ6l._2doB4z")
+	@FindBy(xpath = "//span[@role='button' and @class='_30XB9F']")
 	public WebElement loginPopupCancelButton;
 
 	@FindBy(xpath = "//input[@placeholder='Search for Products, Brands and More']")
 	public WebElement searchBox;
 
-	@FindBy(xpath = "//*/form/div/button")
+	@FindBy(xpath = "//button[@title='Search for Products, Brands and More']")
 	public WebElement searchButton;
 }

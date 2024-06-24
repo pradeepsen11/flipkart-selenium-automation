@@ -19,6 +19,7 @@ public class HomePageObject extends BaseTest {
 			homePage.loginPopupCancelButton.click();
 		} catch (NoSuchElementException e) {
 			ExtentTestManager.getTest().log(LogStatus.PASS, "Login popup did not appear");
+//			Assert.fail("Failed while closing the login popup");
 		} catch (Exception e) {
 			e.printStackTrace();
 			ExtentTestManager.getTest().log(LogStatus.FAIL, "Failed while closing the login popup");
