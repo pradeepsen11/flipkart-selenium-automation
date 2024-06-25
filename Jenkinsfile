@@ -2,7 +2,11 @@ pipeline {
     agent any
 
     triggers {
-        cron('TZ=Asia/Kolkata 0 10 * * *')
+        cron('0 10 * * *')
+    }
+
+    environment {
+        TZ = 'Asia/Kolkata'
     }
 
     stages {
