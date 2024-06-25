@@ -1,25 +1,46 @@
 pipeline {
     agent any
 
+    triggers {
+        cron('TZ=Asia/Kolkata 0 10 * * *')
+    }
+
     stages {
         stage('Checkout') {
             steps {
-                // Checkout the code from the Git repository
+                // Checkout the code from the Git repository, main branch
                 git url: 'https://github.com/pradeepsen11/flipkartHome-selenium-automation.git', branch: 'flipkart'
             }
         }
         
-        stage('Build') {
+        stage('Build and Test') {
             steps {
-                // Run Maven build
+                // Run Maven build and tests
                 bat 'mvn clean install'
             }
         }
-        
-        stage('Test') {
+
+        stage('Publish Report') {
             steps {
-                // Run Maven tests
-                bat 'mvn test'
+                script {
+                    // Use emailext plugin to send the report
+                    emailext(
+                        to: 'pksen7117@gmail.com',
+                        subject: "Extent Report - Build #${env.BUILD_NUMBER}",
+                        body: """
+                            <p>Please find the attached Extent Report for build #${env.BUILD_NUMBER}.</p>
+                            <p>Build details:</p>
+                            <ul>
+                                <li>Project: ${env.JOB_NAME}</li>
+                                <li>Build Number: ${env.BUILD_NUMBER}</li>
+                                <li>Build URL: <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></li>
+                            </ul>
+                        """,
+                        attachLog: true,
+                        attachmentsPattern: 'ExtentReports/ExtentReportResult.html',
+                        mimeType: 'text/html'
+                    )
+                }
             }
         }
     }
