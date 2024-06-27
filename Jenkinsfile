@@ -2,11 +2,7 @@ pipeline {
     agent any
 
     triggers {
-        cron('45 20 * * *')
-    }
-
-    environment {
-        TZ = 'Asia/Kolkata'
+        cron('00 21 * * *')
     }
 
     stages {
@@ -30,7 +26,7 @@ pipeline {
                 // Use credentials stored in Jenkins
                 emailext (
                     to: 'pksen7117@gmail.com',
-                    subject: "Jenkins Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${currentBuild.currentResult})",
+                    subject: "Extent Report | ${env.JOB_NAME} | ${env.BUILD_NUMBER} | ${currentBuild.currentResult}",
                     body: """<p>Build status: ${currentBuild.currentResult}</p>
                              <p>Job: ${env.JOB_NAME}</p>
                              <p>Build number: ${env.BUILD_NUMBER}</p>
