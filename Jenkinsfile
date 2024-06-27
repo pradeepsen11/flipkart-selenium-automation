@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     triggers {
-        cron('00 21 * * *')
+        cron('20 21 * * *')
     }
 
     stages {
@@ -30,14 +30,13 @@ pipeline {
                     body: """<p>Build status: ${currentBuild.currentResult}</p>
                              <p>Job: ${env.JOB_NAME}</p>
                              <p>Build number: ${env.BUILD_NUMBER}</p>
-                             <p>View build: <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>
-                             <p>View report: <a href="${env.BUILD_URL}artifact/ExtentReports/ExtentReportResult.html">Extent Report</a></p>""",
+                             <p>View build: <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>""",
                     from: 'automationbypradeep@gmail.com',
                     attachLog: true,
                     attachmentsPattern: 'ExtentReports/ExtentReportResult.html',
                     mimeType: 'text/html'
-                )
-            }
+                    )
+                }
             }
         }
     }
