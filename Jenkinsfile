@@ -27,24 +27,21 @@ pipeline {
         stage('Publish Report') {
             steps {
                 script {
-                    // Use emailext plugin to send the report
-                    emailext(
-                        to: 'pksen7117@gmail.com',
-                        subject: "Extent Report - Build #${env.BUILD_NUMBER}",
-                        body: """
-                            <p>Please find the attached Extent Report for build #${env.BUILD_NUMBER}.</p>
-                            <p>Build details:</p>
-                            <ul>
-                                <li>Project: ${env.JOB_NAME}</li>
-                                <li>Build Number: ${env.BUILD_NUMBER}</li>
-                                <li>Build URL: <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></li>
-                            </ul>
-                        """,
-                        attachLog: true,
-                        attachmentsPattern: 'ExtentReports/ExtentReportResult.html',
-                        mimeType: 'text/html'
-                    )
-                }
+                // Use credentials stored in Jenkins
+                emailext (
+                    to: 'pksen7117@gmail.com',
+                    subject: "Jenkins Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${currentBuild.currentResult})",
+                    body: """<p>Build status: ${currentBuild.currentResult}</p>
+                             <p>Job: ${env.JOB_NAME}</p>
+                             <p>Build number: ${env.BUILD_NUMBER}</p>
+                             <p>View build: <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>
+                             <p>View report: <a href="${env.BUILD_URL}artifact/ExtentReports/ExtentReportResult.html">Extent Report</a></p>""",
+                    from: 'automationbypradeep@gmail.com',
+                    attachLog: true,
+                    attachmentsPattern: 'ExtentReports/ExtentReportResult.html',
+                    mimeType: 'text/html'
+                )
+            }
             }
         }
     }
