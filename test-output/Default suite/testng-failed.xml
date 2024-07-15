@@ -3,11 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="org.flipkart.tests.HomePageTest">
+      <class name="org.flipkart.tests.SearchTest">
         <methods>
-          <include name="searchProduct"/>
+          <include name="beforeClass"/>
+          <include name="verifySearchWithValidInput"/>
         </methods>
-      </class> <!-- org.flipkart.tests.HomePageTest -->
+      </class> <!-- org.flipkart.tests.SearchTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

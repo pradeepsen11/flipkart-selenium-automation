@@ -25,7 +25,7 @@ public class BaseTest {
 		driver.manage().deleteAllCookies();
 	}
 
-	@AfterSuite
+//	@AfterSuite
 	public void afterClass() {
 		if (driver != null) {
 			driver.manage().deleteAllCookies();

@@ -5,17 +5,17 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class HomePage {
+public class SearchPage {
 
 	WebDriver driver;
 
-	public HomePage(WebDriver driver) {
+	public SearchPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-
-	@FindBy(xpath = "//span[@role='button' and @class='_30XB9F']")
-	public WebElement loginPopupCancelButton;
+	
+	@FindBy(xpath = "//a//img[@title='Flipkart']")
+	public WebElement flipkartLogo;
 
 	@FindBy(xpath = "//input[@placeholder='Search for Products, Brands and More']")
 	public WebElement searchBox;
