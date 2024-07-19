@@ -214,7 +214,6 @@ public class HeaderNavigationPageObject extends BaseTest {
 			
 			ExtentTestManager.getTest().log(LogStatus.INFO, "Flipkart Notification Preference Navigation is working fine");
 		} catch (ElementClickInterceptedException e) {
-			headerNavigationPage.loginPopupCancelButton.click();
 			driver.navigate().refresh();
 			GenericFunctions.hoverOverElement(headerNavigationPage.moreHelpLinksIcon);
 			GenericFunctions.waitForElementClickable(headerNavigationPage.notificationPreferenceIcon);
@@ -251,7 +250,6 @@ public class HeaderNavigationPageObject extends BaseTest {
 			
 			ExtentTestManager.getTest().log(LogStatus.INFO, "Flipkart Customer Care Navigation is working fine");
 		} catch (ElementClickInterceptedException e) {
-			headerNavigationPage.loginPopupCancelButton.click();
 			driver.navigate().refresh();
 			GenericFunctions.hoverOverElement(headerNavigationPage.moreHelpLinksIcon);
 			GenericFunctions.waitForElementClickable(headerNavigationPage.customerCareIcon);
@@ -286,7 +284,6 @@ public class HeaderNavigationPageObject extends BaseTest {
 			clickOnFlipkartLogo();
 			ExtentTestManager.getTest().log(LogStatus.INFO, "Flipkart Advertise Navigation is working fine");
 		} catch (ElementClickInterceptedException e) {
-			headerNavigationPage.loginPopupCancelButton.click();
 			driver.navigate().refresh();
 			GenericFunctions.hoverOverElement(headerNavigationPage.moreHelpLinksIcon);
 			GenericFunctions.waitForElementClickable(headerNavigationPage.advertiseIcon);
@@ -323,7 +320,6 @@ public class HeaderNavigationPageObject extends BaseTest {
 			
 			ExtentTestManager.getTest().log(LogStatus.INFO, "Flipkart Download App Navigation is working fine");
 		} catch (ElementClickInterceptedException e) {
-			headerNavigationPage.loginPopupCancelButton.click();
 			driver.navigate().refresh();
 			GenericFunctions.hoverOverElement(headerNavigationPage.moreHelpLinksIcon);
 			GenericFunctions.waitForElementClickable(headerNavigationPage.downloadAppIcon);

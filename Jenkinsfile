@@ -19,11 +19,12 @@ pipeline {
                 bat 'mvn clean install'
             }
         }
+    }
 
-        stage('Publish Report') {
-            steps {
-                script {
-                // Use credentials stored in Jenkins
+    post {
+        always {
+            // Publish Extent Report
+            script {
                 emailext (
                     to: 'pksen7117@gmail.com',
                     subject: "Extent Report | ${env.JOB_NAME} | ${env.BUILD_NUMBER} | ${currentBuild.currentResult}",
@@ -35,8 +36,7 @@ pipeline {
                     attachLog: true,
                     attachmentsPattern: 'ExtentReports/ExtentReportResult.html',
                     mimeType: 'text/html'
-                    )
-                }
+                )
             }
         }
     }
