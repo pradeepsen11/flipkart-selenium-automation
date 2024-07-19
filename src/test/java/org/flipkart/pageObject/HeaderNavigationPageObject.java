@@ -176,12 +176,18 @@ public class HeaderNavigationPageObject extends BaseTest {
 			
 			ExtentTestManager.getTest().log(LogStatus.INFO, "Flipkart become a seller page navigation is working fine");
 		} catch (ElementClickInterceptedException e) {
+			ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Cancle Login Popup and refresh page");
 			headerNavigationPage.loginPopupCancelButton.click();
 			driver.navigate().refresh();
-			GenericFunctions.waitForElementClickable(headerNavigationPage.becomeASellerIcon);
+			
+			ExtentTestManager.getTest().log(LogStatus.INFO, "Click on BecomeASeller");
 			headerNavigationPage.becomeASellerIcon.click();
+
+			ExtentTestManager.getTest().log(LogStatus.INFO, "Validate verifyBecomeASellerNavigation");
 			GenericFunctions.waitWebDriver(2000);
 			Assert.assertTrue(driver.getCurrentUrl().contains("/sell-online"));
+
+			ExtentTestManager.getTest().log(LogStatus.INFO, "Navigate back to Flipkart Home");
 			driver.navigate().back();
 			clickOnFlipkartLogo();
 		} catch (StaleElementReferenceException e) {
@@ -215,11 +221,17 @@ public class HeaderNavigationPageObject extends BaseTest {
 			ExtentTestManager.getTest().log(LogStatus.INFO, "Flipkart Notification Preference Navigation is working fine");
 		} catch (ElementClickInterceptedException e) {
 			driver.navigate().refresh();
+			ExtentTestManager.getTest().log(LogStatus.INFO, "Hover over more help icon");
 			GenericFunctions.hoverOverElement(headerNavigationPage.moreHelpLinksIcon);
-			GenericFunctions.waitForElementClickable(headerNavigationPage.notificationPreferenceIcon);
+
+			ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Notification Preference icon");
 			headerNavigationPage.notificationPreferenceIcon.click();
+
+			ExtentTestManager.getTest().log(LogStatus.INFO, "Validate verifyNotificationPreferenceNavigation");
 			GenericFunctions.waitWebDriver(2000);
 			Assert.assertTrue(driver.getCurrentUrl().contains("/communication-preferences/push"));
+
+			ExtentTestManager.getTest().log(LogStatus.INFO, "Navigate back to Flipkart Home");
 			clickOnFlipkartLogo();
 		} catch (StaleElementReferenceException e) {
 			driver.navigate().back();
