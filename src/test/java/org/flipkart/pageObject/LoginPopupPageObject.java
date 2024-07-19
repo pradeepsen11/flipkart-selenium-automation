@@ -16,7 +16,6 @@ public class LoginPopupPageObject extends BaseTest{
 	
 	public void verifyPresenceOfLoginPopup() {
 		try {
-			Assert.fail();
 			ExtentTestManager.getTest().log(LogStatus.INFO, "Checking the presence of Login Popup");
 			loginPopupPage.loginPopup.isDisplayed();
 		} catch (NoSuchElementException e) {

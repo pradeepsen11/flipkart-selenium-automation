@@ -10,6 +10,7 @@ import org.flipkart.page.SearchPage;
 import org.flipkart.setup.BaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -49,6 +50,8 @@ public class SearchPageObject extends BaseTest {
 			driver.navigate().refresh();
 			GenericFunctions.waitForElementClickable(searchPage.flipkartLogo);
 			searchPage.flipkartLogo.click();
+		} catch (NoSuchElementException e) {
+			ExtentTestManager.getTest().log(LogStatus.FAIL, "Flipkart logo not found on current screen");;
 		} catch  (Exception e) {
 			e.printStackTrace();
 			clickOnFlipkartLogo();
