@@ -171,7 +171,6 @@ public class SearchPageObject extends BaseTest {
 			// Ordering.natural().reverse().isOrdered() //will sort in descending order
 
 			if (isSorted) {
-				System.out.println("done");
 				ExtentTestManager.getTest().log(LogStatus.PASS, "The products are correctly sorted by price from low to high.");
 			} else {
 				ExtentTestManager.getTest().log(LogStatus.FAIL, "The products are not sorted correctly by price.");
