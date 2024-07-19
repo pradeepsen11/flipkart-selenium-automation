@@ -6,6 +6,7 @@ import org.flipkart.generic.GenericFunctions;
 import org.flipkart.page.HeaderNavigationPage;
 import org.flipkart.setup.BaseTest;
 import org.openqa.selenium.ElementClickInterceptedException;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.testng.Assert;
 
@@ -23,14 +24,23 @@ public class HeaderNavigationPageObject extends BaseTest {
 		} catch (ElementClickInterceptedException e) {
 			headerNavigationPage.loginPopupCancelButton.click();
 			driver.navigate().refresh();
-			GenericFunctions.waitForElementClickable(headerNavigationPage.flipkartLogo);
-			headerNavigationPage.flipkartLogo.click();
+		} catch (NoSuchElementException e) {
+			ExtentTestManager.getTest().log(LogStatus.FAIL, "Flipkart logo not found on current screen");;
 		} catch  (Exception e) {
 			e.printStackTrace();
-			clickOnFlipkartLogo();
 			ExtentTestManager.getTest().log(LogStatus.FAIL, "Failed while clicking on flipkart logo");
 			log.error("Exception in the method clickOnFlipkartLogo");
 			Assert.fail("Failed while clicking on flipkart logo");
+		}
+	}
+	
+	public void clickOnLoginPopupCancleButton() {
+		try {
+			headerNavigationPage.loginPopupCancelButton.click();
+			driver.navigate().refresh();
+			ExtentTestManager.getTest().log(LogStatus.PASS, "Clicked on loginPopupCancelButton");
+		} catch (NoSuchElementException e) {
+			ExtentTestManager.getTest().log(LogStatus.INFO, "loginPopupCancelButton did not appear");
 		}
 	}
 
@@ -44,10 +54,9 @@ public class HeaderNavigationPageObject extends BaseTest {
 
 			ExtentTestManager.getTest().log(LogStatus.INFO, "Validate verifyFlipkartHomeNavigation");
 			Assert.assertTrue(headerNavigationPage.appliancesIcon.isDisplayed());
-			ExtentTestManager.getTest().log(LogStatus.INFO, "Flipkart home Navigation is working fine");
+			ExtentTestManager.getTest().log(LogStatus.PASS, "Flipkart home Navigation is working fine");
 		} catch (Exception e) {
 			e.printStackTrace();
-			clickOnFlipkartLogo();
 			ExtentTestManager.getTest().log(LogStatus.FAIL, "Failed while clicking on Flipkart Logo");
 			log.error("Exception in the method verifyFlipkartHomeNavigation");
 			Assert.fail("Failed while clicking on Flipkart Logo");
@@ -65,27 +74,24 @@ public class HeaderNavigationPageObject extends BaseTest {
 			ExtentTestManager.getTest().log(LogStatus.INFO, "Validate verifyFlipkartPlusNavigation");
 			GenericFunctions.waitWebDriver(2000);
 			Assert.assertTrue(driver.getCurrentUrl().endsWith("/plus"));
-
-			ExtentTestManager.getTest().log(LogStatus.INFO, "Navigate back to Flipkart Home");
-			clickOnFlipkartLogo();
-			
-			ExtentTestManager.getTest().log(LogStatus.INFO, "Flipkart plus Navigation is working fine");
+			ExtentTestManager.getTest().log(LogStatus.PASS, "Flipkart plus Navigation is working fine");
 		} catch (ElementClickInterceptedException e) {
-			headerNavigationPage.loginPopupCancelButton.click();
-			driver.navigate().refresh();
-			clickOnFlipkartLogo();
+			clickOnLoginPopupCancleButton();
+			ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Appliances");
 			headerNavigationPage.appliancesIcon.click();
-			GenericFunctions.waitForElementClickable(headerNavigationPage.plusIcon);
+
+			ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Flipkart Plus Icon");
 			headerNavigationPage.plusIcon.click();
+
+			ExtentTestManager.getTest().log(LogStatus.INFO, "Validate verifyFlipkartPlusNavigation");
 			GenericFunctions.waitWebDriver(2000);
 			Assert.assertTrue(driver.getCurrentUrl().endsWith("/plus"));
-			clickOnFlipkartLogo();
+			ExtentTestManager.getTest().log(LogStatus.PASS, "Flipkart plus Navigation is working fine");
 		}catch (StaleElementReferenceException e) {
 			driver.navigate().back();
 			GenericFunctions.waitWebDriver(2000);
 		} catch (Exception e) {
 			e.printStackTrace();
-			clickOnFlipkartLogo();
 			ExtentTestManager.getTest().log(LogStatus.FAIL, "Failed while clicking on Flipkart Plus Icon");
 			log.error("Exception in the method verifyFlipkartPlusNavigation");
 			Assert.fail("Failed while clicking on Flipkart Plus Icon");
@@ -100,19 +106,16 @@ public class HeaderNavigationPageObject extends BaseTest {
 			ExtentTestManager.getTest().log(LogStatus.INFO, "Validate verifyLoginPageNavigation");
 			GenericFunctions.waitWebDriver(2000);
 			Assert.assertTrue(driver.getCurrentUrl().contains("/account/login"));
-
-			ExtentTestManager.getTest().log(LogStatus.INFO, "Navigate back to Flipkart Home");
-			clickOnFlipkartLogo();
-			
-			ExtentTestManager.getTest().log(LogStatus.INFO, "Flipkart Login Page Navigation is working fine");
+			ExtentTestManager.getTest().log(LogStatus.PASS, "Flipkart Login Page Navigation is working fine");
 		} catch (ElementClickInterceptedException e) {
-			headerNavigationPage.loginPopupCancelButton.click();
-			driver.navigate().refresh();
-			GenericFunctions.waitForElementClickable(headerNavigationPage.loginIcon);
+			clickOnLoginPopupCancleButton();
+			ExtentTestManager.getTest().log(LogStatus.INFO, "Click on login icon");
 			headerNavigationPage.loginIcon.click();
+
+			ExtentTestManager.getTest().log(LogStatus.INFO, "Validate verifyLoginPageNavigation");
 			GenericFunctions.waitWebDriver(2000);
 			Assert.assertTrue(driver.getCurrentUrl().contains("/account/login"));
-			clickOnFlipkartLogo();
+			ExtentTestManager.getTest().log(LogStatus.PASS, "Flipkart Login Page Navigation is working fine");
 		} catch (StaleElementReferenceException e) {
 			driver.navigate().back();
 			GenericFunctions.waitWebDriver(2000);
@@ -121,7 +124,6 @@ public class HeaderNavigationPageObject extends BaseTest {
 			clickOnFlipkartLogo();
 		} catch (Exception e) {
 			e.printStackTrace();
-			clickOnFlipkartLogo();
 			ExtentTestManager.getTest().log(LogStatus.FAIL, "Failed while navigating to login page");
 			log.error("Exception in the method verifyLoginPageNavigation");
 			Assert.fail("Failed while navigating to login page");
@@ -136,25 +138,21 @@ public class HeaderNavigationPageObject extends BaseTest {
 			ExtentTestManager.getTest().log(LogStatus.INFO, "Validate verifyCartNavigation");
 			GenericFunctions.waitWebDriver(2000);
 			Assert.assertTrue(driver.getCurrentUrl().contains("/viewcart"));
-
-			ExtentTestManager.getTest().log(LogStatus.INFO, "Navigate back to Flipkart Home");
-			clickOnFlipkartLogo();
-			
-			ExtentTestManager.getTest().log(LogStatus.INFO, "Flipkart Cart Navigation is working fine");
+			ExtentTestManager.getTest().log(LogStatus.PASS, "Flipkart Cart Navigation is working fine");
 		} catch (ElementClickInterceptedException e) {
-			headerNavigationPage.loginPopupCancelButton.click();
-			driver.navigate().refresh();
-			GenericFunctions.waitForElementClickable(headerNavigationPage.cartIcon);
+			clickOnLoginPopupCancleButton();
+			ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Cart");
 			headerNavigationPage.cartIcon.click();
+
+			ExtentTestManager.getTest().log(LogStatus.INFO, "Validate verifyCartNavigation");
 			GenericFunctions.waitWebDriver(2000);
 			Assert.assertTrue(driver.getCurrentUrl().contains("/viewcart"));
-			clickOnFlipkartLogo();
+			ExtentTestManager.getTest().log(LogStatus.PASS, "Flipkart Cart Navigation is working fine");
 		} catch (StaleElementReferenceException e) {
 			driver.navigate().back();
 			GenericFunctions.waitWebDriver(2000);
 		} catch (Exception e) {
 			e.printStackTrace();
-			clickOnFlipkartLogo();
 			ExtentTestManager.getTest().log(LogStatus.FAIL, "Failed while clicking on Cart");
 			log.error("Exception in the method verifyCartNavigation");
 			Assert.fail("Failed while clicking on Cart");
@@ -169,34 +167,21 @@ public class HeaderNavigationPageObject extends BaseTest {
 			ExtentTestManager.getTest().log(LogStatus.INFO, "Validate verifyBecomeASellerNavigation");
 			GenericFunctions.waitWebDriver(2000);
 			Assert.assertTrue(driver.getCurrentUrl().contains("/sell-online"));
-
-			ExtentTestManager.getTest().log(LogStatus.INFO, "Navigate back to Flipkart Home");
-			driver.navigate().back();
-			clickOnFlipkartLogo();
-			
-			ExtentTestManager.getTest().log(LogStatus.INFO, "Flipkart become a seller page navigation is working fine");
+			ExtentTestManager.getTest().log(LogStatus.PASS, "Flipkart become a seller page navigation is working fine");
 		} catch (ElementClickInterceptedException e) {
-			ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Cancle Login Popup and refresh page");
-			headerNavigationPage.loginPopupCancelButton.click();
-			driver.navigate().refresh();
-			
+			clickOnLoginPopupCancleButton();
 			ExtentTestManager.getTest().log(LogStatus.INFO, "Click on BecomeASeller");
 			headerNavigationPage.becomeASellerIcon.click();
 
 			ExtentTestManager.getTest().log(LogStatus.INFO, "Validate verifyBecomeASellerNavigation");
 			GenericFunctions.waitWebDriver(2000);
 			Assert.assertTrue(driver.getCurrentUrl().contains("/sell-online"));
-
-			ExtentTestManager.getTest().log(LogStatus.INFO, "Navigate back to Flipkart Home");
-			driver.navigate().back();
-			clickOnFlipkartLogo();
+			ExtentTestManager.getTest().log(LogStatus.PASS, "Flipkart become a seller page navigation is working fine");
 		} catch (StaleElementReferenceException e) {
 			driver.navigate().back();
 			GenericFunctions.waitWebDriver(2000);
 		} catch (Exception e) {
 			e.printStackTrace();
-			driver.navigate().back();
-			clickOnFlipkartLogo();
 			ExtentTestManager.getTest().log(LogStatus.FAIL, "Failed while navigating to become a seller page");
 			log.error("Exception in the method verifyBecomeASellerNavigation");
 			Assert.fail("Failed while navigating to become a seller page");
@@ -214,13 +199,9 @@ public class HeaderNavigationPageObject extends BaseTest {
 			ExtentTestManager.getTest().log(LogStatus.INFO, "Validate verifyNotificationPreferenceNavigation");
 			GenericFunctions.waitWebDriver(2000);
 			Assert.assertTrue(driver.getCurrentUrl().contains("/communication-preferences/push"));
-
-			ExtentTestManager.getTest().log(LogStatus.INFO, "Navigate back to Flipkart Home");
-			clickOnFlipkartLogo();
-			
-			ExtentTestManager.getTest().log(LogStatus.INFO, "Flipkart Notification Preference Navigation is working fine");
+			ExtentTestManager.getTest().log(LogStatus.PASS, "Flipkart Notification Preference Navigation is working fine");
 		} catch (ElementClickInterceptedException e) {
-			driver.navigate().refresh();
+			clickOnLoginPopupCancleButton();
 			ExtentTestManager.getTest().log(LogStatus.INFO, "Hover over more help icon");
 			GenericFunctions.hoverOverElement(headerNavigationPage.moreHelpLinksIcon);
 
@@ -230,15 +211,12 @@ public class HeaderNavigationPageObject extends BaseTest {
 			ExtentTestManager.getTest().log(LogStatus.INFO, "Validate verifyNotificationPreferenceNavigation");
 			GenericFunctions.waitWebDriver(2000);
 			Assert.assertTrue(driver.getCurrentUrl().contains("/communication-preferences/push"));
-
-			ExtentTestManager.getTest().log(LogStatus.INFO, "Navigate back to Flipkart Home");
-			clickOnFlipkartLogo();
+			ExtentTestManager.getTest().log(LogStatus.PASS, "Flipkart Notification Preference Navigation is working fine");
 		} catch (StaleElementReferenceException e) {
 			driver.navigate().back();
 			GenericFunctions.waitWebDriver(2000);
 		} catch (Exception e) {
 			e.printStackTrace();
-			clickOnFlipkartLogo();
 			ExtentTestManager.getTest().log(LogStatus.FAIL, "Failed while navigating to Notification Preference page");
 			log.error("Exception in the method verifyNotificationPreferenceNavigation");
 			Assert.fail("Failed while navigating to Notification Preference page");
@@ -256,23 +234,24 @@ public class HeaderNavigationPageObject extends BaseTest {
 			ExtentTestManager.getTest().log(LogStatus.INFO, "Validate verifyCustomerCarePageNavigation");
 			GenericFunctions.waitWebDriver(2000);
 			Assert.assertTrue(driver.getCurrentUrl().endsWith("/helpcentre"));
-
-			ExtentTestManager.getTest().log(LogStatus.INFO, "Navigate back to Flipkart Home");
-			clickOnFlipkartLogo();
-			
-			ExtentTestManager.getTest().log(LogStatus.INFO, "Flipkart Customer Care Navigation is working fine");
+			ExtentTestManager.getTest().log(LogStatus.PASS, "Flipkart Customer Care Navigation is working fine");
 		} catch (ElementClickInterceptedException e) {
-			driver.navigate().refresh();
+			clickOnLoginPopupCancleButton();
+			ExtentTestManager.getTest().log(LogStatus.INFO, "Hover over more help icon");
 			GenericFunctions.hoverOverElement(headerNavigationPage.moreHelpLinksIcon);
-			GenericFunctions.waitForElementClickable(headerNavigationPage.customerCareIcon);
+
+			ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Customer Care icon");
 			headerNavigationPage.customerCareIcon.click();
-			clickOnFlipkartLogo();
+
+			ExtentTestManager.getTest().log(LogStatus.INFO, "Validate verifyCustomerCarePageNavigation");
+			GenericFunctions.waitWebDriver(2000);
+			Assert.assertTrue(driver.getCurrentUrl().endsWith("/helpcentre"));
+			ExtentTestManager.getTest().log(LogStatus.PASS, "Flipkart Customer Care Navigation is working fine");
 		} catch (StaleElementReferenceException e) {
 			driver.navigate().back();
 			GenericFunctions.waitWebDriver(2000);
 		} catch (Exception e) {
 			e.printStackTrace();
-			clickOnFlipkartLogo();
 			ExtentTestManager.getTest().log(LogStatus.FAIL, "Failed while navigating to Customer Care page");
 			log.error("Exception in the method verifyCustomerCarePageNavigation");
 			Assert.fail("Failed while navigating to Customer Care page");
@@ -290,25 +269,24 @@ public class HeaderNavigationPageObject extends BaseTest {
 			ExtentTestManager.getTest().log(LogStatus.INFO, "Validate verifyAdvertisePageNavigation");
 			GenericFunctions.waitWebDriver(2000);
 			Assert.assertTrue(driver.getCurrentUrl().startsWith("https://advertising.flipkart.com/login"));
-
-			ExtentTestManager.getTest().log(LogStatus.INFO, "Navigate back to Flipkart Home");
-			driver.navigate().back();
-			clickOnFlipkartLogo();
-			ExtentTestManager.getTest().log(LogStatus.INFO, "Flipkart Advertise Navigation is working fine");
+			ExtentTestManager.getTest().log(LogStatus.PASS, "Flipkart Advertise Navigation is working fine");
 		} catch (ElementClickInterceptedException e) {
-			driver.navigate().refresh();
+			clickOnLoginPopupCancleButton();
+			ExtentTestManager.getTest().log(LogStatus.INFO, "Hover over more help icon");
 			GenericFunctions.hoverOverElement(headerNavigationPage.moreHelpLinksIcon);
-			GenericFunctions.waitForElementClickable(headerNavigationPage.advertiseIcon);
+
+			ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Advertise icon");
 			headerNavigationPage.advertiseIcon.click();
-			driver.navigate().back();
-			clickOnFlipkartLogo();
+
+			ExtentTestManager.getTest().log(LogStatus.INFO, "Validate verifyAdvertisePageNavigation");
+			GenericFunctions.waitWebDriver(2000);
+			Assert.assertTrue(driver.getCurrentUrl().startsWith("https://advertising.flipkart.com/login"));
+			ExtentTestManager.getTest().log(LogStatus.PASS, "Flipkart Advertise Navigation is working fine");
 		} catch (StaleElementReferenceException e) {
 			driver.navigate().back();
 			GenericFunctions.waitWebDriver(2000);
 		} catch (Exception e) {
 			e.printStackTrace();
-			driver.navigate().back();
-			clickOnFlipkartLogo();
 			ExtentTestManager.getTest().log(LogStatus.FAIL, "Failed while navigating to Advertise page");
 			log.error("Exception in the method verifyAdvertisePageNavigation");
 			Assert.fail("Failed while navigating to Advertise page");
@@ -326,25 +304,24 @@ public class HeaderNavigationPageObject extends BaseTest {
 			ExtentTestManager.getTest().log(LogStatus.INFO, "Validate verifyDownloadAppPageNavigation");
 			GenericFunctions.waitWebDriver(2000);
 			Assert.assertTrue(driver.getCurrentUrl().contains("/mobile-apps"));
-
-			ExtentTestManager.getTest().log(LogStatus.INFO, "Navigate back to Flipkart Home");
-			clickOnFlipkartLogo();
-			
-			ExtentTestManager.getTest().log(LogStatus.INFO, "Flipkart Download App Navigation is working fine");
+			ExtentTestManager.getTest().log(LogStatus.PASS, "Flipkart Download App Navigation is working fine");
 		} catch (ElementClickInterceptedException e) {
-			driver.navigate().refresh();
+			clickOnLoginPopupCancleButton();
+			ExtentTestManager.getTest().log(LogStatus.INFO, "Hover over more help icon");
 			GenericFunctions.hoverOverElement(headerNavigationPage.moreHelpLinksIcon);
-			GenericFunctions.waitForElementClickable(headerNavigationPage.downloadAppIcon);
+
+			ExtentTestManager.getTest().log(LogStatus.INFO, "Click on Download App icon");
 			headerNavigationPage.downloadAppIcon.click();
+
+			ExtentTestManager.getTest().log(LogStatus.INFO, "Validate verifyDownloadAppPageNavigation");
 			GenericFunctions.waitWebDriver(2000);
 			Assert.assertTrue(driver.getCurrentUrl().contains("/mobile-apps"));
-			clickOnFlipkartLogo();
+			ExtentTestManager.getTest().log(LogStatus.PASS, "Flipkart Download App Navigation is working fine");
 		} catch (StaleElementReferenceException e) {
 			driver.navigate().back();
 			GenericFunctions.waitWebDriver(2000);
 		} catch (Exception e) {
 			e.printStackTrace();
-			clickOnFlipkartLogo();
 			ExtentTestManager.getTest().log(LogStatus.FAIL, "Failed while navigating to Download App page");
 			log.error("Exception in the method verifyDownloadAppPageNavigation");
 			Assert.fail("Failed while navigating to Download App page");

@@ -31,6 +31,7 @@ public class SearchTest extends BaseTest{
 		
 		searchPageObject.searchProduct("Realme 12x 5G");
 		searchPageObject.validateSearchResponse(driver.findElement(By.xpath("//div[text() = 'realme 12x 5G (Twilight Purple, 128 GB)']")).isDisplayed());
+		searchPageObject.clickOnFlipkartLogo();
 	}
 	
 	@Test(priority = 3)
@@ -40,6 +41,7 @@ public class SearchTest extends BaseTest{
 		
 		searchPageObject.searchProduct("Rolome X12 5G");
 		searchPageObject.validateSearchResponse(driver.findElement(By.xpath("//div[text() = 'realme 12x 5G (Twilight Purple, 128 GB)']")).isDisplayed());
+		searchPageObject.clickOnFlipkartLogo();
 	}
 	
 	@Test(priority = 4)
@@ -49,6 +51,7 @@ public class SearchTest extends BaseTest{
 		
 		searchPageObject.searchProduct("R@!me X12 5&");
 		searchPageObject.validateSearchResponse(driver.findElement(By.xpath("//div[text() = 'realme 12x 5G (Twilight Purple, 128 GB)']")).isDisplayed());
+		searchPageObject.clickOnFlipkartLogo();
 	}
 	
 	@Test(priority = 5)
@@ -70,6 +73,7 @@ public class SearchTest extends BaseTest{
 		searchPageObject.clickOnFlipkartLogo();
 		searchPageObject.clickOnSearchBox();
 		searchPageObject.validateSearchResponse(driver.findElement(By.xpath("//a[contains(@href, '/search?q=Realme+12x+5G')]")).isDisplayed());
+		searchPageObject.clickOnFlipkartLogo();
 	}
 	
 	@Test(priority = 7)
@@ -79,6 +83,7 @@ public class SearchTest extends BaseTest{
 
 		searchPageObject.enterProductName("groc");
 		searchPageObject.validateSearchResponse(driver.findElement(By.xpath("//a[contains(@href, '/search?q=grocery')]")).isDisplayed());
+		searchPageObject.clickOnFlipkartLogo();
 	}
 	
 	@Test(priority = 8)
@@ -90,6 +95,7 @@ public class SearchTest extends BaseTest{
 		ExtentTestManager.getTest().log(LogStatus.INFO, "Click on suggestion");
 		driver.findElement(By.xpath("//a[contains(@href, '/search?q=grocery')]//div[text()='in Dry Fruit, Nut & Seed']")).click();
 		searchPageObject.validateSearchResponse(driver.findElement(By.xpath("//a[contains(text(),'Cashew')]")).isDisplayed());
+		searchPageObject.clickOnFlipkartLogo();
 	}
 	
 	@Test(priority = 9)
@@ -120,6 +126,7 @@ public class SearchTest extends BaseTest{
 		ExtentTestManager.getTest().log(LogStatus.INFO, "Remove all filters");
 		driver.findElement(By.xpath("//span[text()='Clear all']")).click();
 		searchPageObject.validateSearchResponse(driver.findElement(By.xpath("//div[text() = 'Motorola G34 5G (Ocean Green, 128 GB)']")).isDisplayed());
+		searchPageObject.clickOnFlipkartLogo();
 		ExtentTestManager.getTest().log(LogStatus.PASS, "Removed search filter is working fine");
 	}
 	

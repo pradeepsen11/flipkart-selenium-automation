@@ -2,52 +2,52 @@
 <testng-results ignored="0" total="9" passed="9" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-07-19T14:34:36 IST" name="Default suite" finished-at="2024-07-19T14:35:26 IST" duration-ms="50756">
+  <suite started-at="2024-07-19T15:27:33 IST" name="Default suite" finished-at="2024-07-19T15:28:36 IST" duration-ms="62283">
     <groups>
     </groups>
-    <test started-at="2024-07-19T14:34:36 IST" name="Default test" finished-at="2024-07-19T14:35:26 IST" duration-ms="50756">
+    <test started-at="2024-07-19T15:27:33 IST" name="Default test" finished-at="2024-07-19T15:28:36 IST" duration-ms="62283">
       <class name="org.flipkart.tests.HeaderNavigationTest">
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:org.flipkart.tests.HeaderNavigationTest@5d534f5d]" started-at="2024-07-19T14:34:31 IST" name="beforeClass" finished-at="2024-07-19T14:34:36 IST" duration-ms="4728" status="PASS">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:org.flipkart.tests.HeaderNavigationTest@5d534f5d]" started-at="2024-07-19T15:27:26 IST" name="beforeClass" finished-at="2024-07-19T15:27:33 IST" duration-ms="6928" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method signature="verifyFlipkartHomeNavigation()[pri:1, instance:org.flipkart.tests.HeaderNavigationTest@5d534f5d]" started-at="2024-07-19T14:34:36 IST" name="verifyFlipkartHomeNavigation" finished-at="2024-07-19T14:34:39 IST" duration-ms="3324" status="PASS">
+        <test-method signature="verifyFlipkartHomeNavigation()[pri:1, instance:org.flipkart.tests.HeaderNavigationTest@5d534f5d]" started-at="2024-07-19T15:27:33 IST" name="verifyFlipkartHomeNavigation" finished-at="2024-07-19T15:27:37 IST" duration-ms="3367" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyFlipkartHomeNavigation -->
-        <test-method signature="verifyFlipkartPlusNavigation()[pri:2, instance:org.flipkart.tests.HeaderNavigationTest@5d534f5d]" started-at="2024-07-19T14:34:39 IST" name="verifyFlipkartPlusNavigation" finished-at="2024-07-19T14:34:44 IST" duration-ms="5534" status="PASS">
+        <test-method signature="verifyFlipkartPlusNavigation()[pri:2, instance:org.flipkart.tests.HeaderNavigationTest@5d534f5d]" started-at="2024-07-19T15:27:37 IST" name="verifyFlipkartPlusNavigation" finished-at="2024-07-19T15:27:41 IST" duration-ms="3947" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyFlipkartPlusNavigation -->
-        <test-method signature="verifyLoginPageNavigation()[pri:3, instance:org.flipkart.tests.HeaderNavigationTest@5d534f5d]" started-at="2024-07-19T14:34:44 IST" name="verifyLoginPageNavigation" finished-at="2024-07-19T14:34:52 IST" duration-ms="7555" status="PASS">
+        <test-method signature="verifyLoginPageNavigation()[pri:3, instance:org.flipkart.tests.HeaderNavigationTest@5d534f5d]" started-at="2024-07-19T15:27:41 IST" name="verifyLoginPageNavigation" finished-at="2024-07-19T15:27:51 IST" duration-ms="10152" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyLoginPageNavigation -->
-        <test-method signature="verifyCartNavigation()[pri:4, instance:org.flipkart.tests.HeaderNavigationTest@5d534f5d]" started-at="2024-07-19T14:34:52 IST" name="verifyCartNavigation" finished-at="2024-07-19T14:34:57 IST" duration-ms="5155" status="PASS">
+        <test-method signature="verifyCartNavigation()[pri:4, instance:org.flipkart.tests.HeaderNavigationTest@5d534f5d]" started-at="2024-07-19T15:27:51 IST" name="verifyCartNavigation" finished-at="2024-07-19T15:27:57 IST" duration-ms="5937" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyCartNavigation -->
-        <test-method signature="verifyBecomeASellerNavigation()[pri:5, instance:org.flipkart.tests.HeaderNavigationTest@5d534f5d]" started-at="2024-07-19T14:34:57 IST" name="verifyBecomeASellerNavigation" finished-at="2024-07-19T14:35:06 IST" duration-ms="8639" status="PASS">
+        <test-method signature="verifyBecomeASellerNavigation()[pri:5, instance:org.flipkart.tests.HeaderNavigationTest@5d534f5d]" started-at="2024-07-19T15:27:57 IST" name="verifyBecomeASellerNavigation" finished-at="2024-07-19T15:28:06 IST" duration-ms="9231" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyBecomeASellerNavigation -->
-        <test-method signature="verifyNotificationPreferenceNavigation()[pri:6, instance:org.flipkart.tests.HeaderNavigationTest@5d534f5d]" started-at="2024-07-19T14:35:06 IST" name="verifyNotificationPreferenceNavigation" finished-at="2024-07-19T14:35:10 IST" duration-ms="4422" status="PASS">
+        <test-method signature="verifyNotificationPreferenceNavigation()[pri:6, instance:org.flipkart.tests.HeaderNavigationTest@5d534f5d]" started-at="2024-07-19T15:28:06 IST" name="verifyNotificationPreferenceNavigation" finished-at="2024-07-19T15:28:14 IST" duration-ms="7806" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyNotificationPreferenceNavigation -->
-        <test-method signature="verifyCustomerCarePageNavigation()[pri:7, instance:org.flipkart.tests.HeaderNavigationTest@5d534f5d]" started-at="2024-07-19T14:35:10 IST" name="verifyCustomerCarePageNavigation" finished-at="2024-07-19T14:35:16 IST" duration-ms="5366" status="PASS">
+        <test-method signature="verifyCustomerCarePageNavigation()[pri:7, instance:org.flipkart.tests.HeaderNavigationTest@5d534f5d]" started-at="2024-07-19T15:28:14 IST" name="verifyCustomerCarePageNavigation" finished-at="2024-07-19T15:28:21 IST" duration-ms="7263" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyCustomerCarePageNavigation -->
-        <test-method signature="verifyAdvertisePageNavigation()[pri:8, instance:org.flipkart.tests.HeaderNavigationTest@5d534f5d]" started-at="2024-07-19T14:35:16 IST" name="verifyAdvertisePageNavigation" finished-at="2024-07-19T14:35:22 IST" duration-ms="6484" status="PASS">
+        <test-method signature="verifyAdvertisePageNavigation()[pri:8, instance:org.flipkart.tests.HeaderNavigationTest@5d534f5d]" started-at="2024-07-19T15:28:21 IST" name="verifyAdvertisePageNavigation" finished-at="2024-07-19T15:28:29 IST" duration-ms="8049" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyAdvertisePageNavigation -->
-        <test-method signature="verifyDownloadAppPageNavigation()[pri:9, instance:org.flipkart.tests.HeaderNavigationTest@5d534f5d]" started-at="2024-07-19T14:35:22 IST" name="verifyDownloadAppPageNavigation" finished-at="2024-07-19T14:35:26 IST" duration-ms="4210" status="PASS">
+        <test-method signature="verifyDownloadAppPageNavigation()[pri:9, instance:org.flipkart.tests.HeaderNavigationTest@5d534f5d]" started-at="2024-07-19T15:28:29 IST" name="verifyDownloadAppPageNavigation" finished-at="2024-07-19T15:28:36 IST" duration-ms="6481" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyDownloadAppPageNavigation -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:org.flipkart.tests.HeaderNavigationTest@5d534f5d]" started-at="2024-07-19T14:35:26 IST" name="afterClass" finished-at="2024-07-19T14:35:27 IST" duration-ms="394" status="PASS">
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:org.flipkart.tests.HeaderNavigationTest@5d534f5d]" started-at="2024-07-19T15:28:36 IST" name="afterClass" finished-at="2024-07-19T15:28:36 IST" duration-ms="273" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->

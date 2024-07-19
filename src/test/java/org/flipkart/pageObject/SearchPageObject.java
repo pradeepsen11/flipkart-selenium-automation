@@ -44,6 +44,11 @@ public class SearchPageObject extends BaseTest {
 		try {
 			ExtentTestManager.getTest().log(LogStatus.INFO, "Click on flipkart logo button");
 			searchPage.flipkartLogo.click();
+		} catch (ElementClickInterceptedException e) {
+			searchPage.loginPopupCancelButton.click();
+			driver.navigate().refresh();
+			GenericFunctions.waitForElementClickable(searchPage.flipkartLogo);
+			searchPage.flipkartLogo.click();
 		} catch  (Exception e) {
 			e.printStackTrace();
 			clickOnFlipkartLogo();
@@ -109,9 +114,6 @@ public class SearchPageObject extends BaseTest {
 		try {
 			ExtentTestManager.getTest().log(LogStatus.INFO, "Validating response");
 			Assert.assertTrue(condition);
-			ExtentTestManager.getTest().log(LogStatus.INFO, "Click on flipkart logo button");
-			GenericFunctions.waitForElementClickable(searchPage.flipkartLogo);
-			searchPage.flipkartLogo.click();
 		} catch (ElementClickInterceptedException e) {
 			searchPage.loginPopupCancelButton.click();
 			driver.navigate().refresh();

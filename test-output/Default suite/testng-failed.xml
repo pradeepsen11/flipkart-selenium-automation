@@ -5,8 +5,8 @@
     <classes>
       <class name="org.flipkart.tests.SearchTest">
         <methods>
-          <include name="verifySearchResultAfterApplyingSort"/>
           <include name="beforeClass"/>
+          <include name="verifySearchWithSpecialCharacters"/>
           <include name="afterClass"/>
         </methods>
       </class> <!-- org.flipkart.tests.SearchTest -->
