@@ -22,4 +22,16 @@ public class SearchPage {
 
 	@FindBy(xpath = "//button[@title='Search for Products, Brands and More']")
 	public WebElement searchButton;
+	
+	@FindBy(xpath = "//span[@role='button' and @class='_30XB9F']")
+	public WebElement loginPopupCancelButton;
+	
+	@FindBy(xpath = "//span[contains(text(), 'Page 1 of')]")
+	public WebElement page_1_OfButton;
+	
+	@FindBy(xpath = "//span[contains(text(), 'Page 2 of')]")
+	public WebElement page_2_OfButton;
+	
+	@FindBy(xpath = "//span[text()= 'Next']")
+	public WebElement nextPageButton;
 }

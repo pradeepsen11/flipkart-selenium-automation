@@ -3,6 +3,8 @@
 ## Overview
 This repository contains a comprehensive Selenium Java automation project for automating functionalities on the Flipkart application's homepage. The project is built using Page Object Model (POM) for maintainability and Extent Reports for detailed test reporting. It is integrated with Jenkins for automated testing through pipelines.
 
+**Test Cases are attached in TestCaseDocument**
+
 ## Key Features
 - **Page Object Model (POM):** Organizes web elements and their operations into reusable classes, enhancing code readability and maintenance.
 - **Extent Reports:** Provides detailed and visually appealing test reports, showcasing test results and insights.

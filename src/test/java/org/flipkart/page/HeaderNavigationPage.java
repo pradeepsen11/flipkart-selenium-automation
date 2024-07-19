@@ -47,4 +47,7 @@ public class HeaderNavigationPage {
 	@FindBy(xpath = "//a[@title='Download App']")
 	public WebElement downloadAppIcon;
 	
+	@FindBy(xpath = "//span[@role='button' and @class='_30XB9F']")
+	public WebElement loginPopupCancelButton;
+	
 }
