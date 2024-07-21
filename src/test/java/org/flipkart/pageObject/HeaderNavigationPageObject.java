@@ -57,9 +57,9 @@ public class HeaderNavigationPageObject extends BaseTest {
 			ExtentTestManager.getTest().log(LogStatus.PASS, "Flipkart home Navigation is working fine");
 		} catch (Exception e) {
 			e.printStackTrace();
-			ExtentTestManager.getTest().log(LogStatus.FAIL, "Failed while clicking on Flipkart Logo");
+			ExtentTestManager.getTest().log(LogStatus.FAIL, "Failed while navigating to Flipkart Logo");
 			log.error("Exception in the method verifyFlipkartHomeNavigation");
-			Assert.fail("Failed while clicking on Flipkart Logo");
+			Assert.fail("Failed while navigating to Flipkart Logo");
 		}
 	}
 

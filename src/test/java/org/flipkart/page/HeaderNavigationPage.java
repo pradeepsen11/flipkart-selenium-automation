@@ -23,7 +23,7 @@ public class HeaderNavigationPage {
 	@FindBy(xpath = "//a[@title='Login']//span[text()='Login']")
 	public WebElement loginIcon;
 	
-	@FindBy(xpath = "//a[@aria-label='Appliances']")
+	@FindBy(xpath = "//span[contains(text(), 'Appliances')]")
 	public WebElement appliancesIcon;
 	
 	@FindBy(xpath = "//a[@title='Cart']//img[@alt='Cart']")
