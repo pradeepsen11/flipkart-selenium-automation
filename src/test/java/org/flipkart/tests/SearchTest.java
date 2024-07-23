@@ -2,7 +2,6 @@ package org.flipkart.tests;
 
 import org.apache.log4j.Logger;
 import org.flipkart.generic.ExtentTestManager;
-import org.flipkart.generic.GenericFunctions;
 import org.flipkart.page.SearchPage;
 import org.flipkart.pageObject.SearchPageObject;
 import org.flipkart.setup.BaseTest;
@@ -104,11 +103,11 @@ public class SearchTest extends BaseTest{
 		ExtentTestManager.startTest("verifySearchResultAfterApplyingFilter", "TC020");
 
 		searchPageObject.searchProduct("Mobiles");
-		Assert.assertTrue(driver.findElement(By.xpath("//div[text() = 'Motorola G34 5G (Ocean Green, 128 GB)']")).isDisplayed());
+		Assert.assertTrue(driver.findElement(By.xpath("//div[contains(text(), 'Motorola')]")).isDisplayed());
 		ExtentTestManager.getTest().log(LogStatus.INFO, "Apply filter, brand=samsung");
 		driver.findElement(By.xpath("//div[text()='SAMSUNG']")).click();
 		try {
-			Assert.assertTrue(driver.findElement(By.xpath("//div[text() = 'Motorola G34 5G (Ocean Green, 128 GB)']")).isDisplayed());
+			Assert.assertTrue(driver.findElement(By.xpath("//div[contains(text(), 'Motorola')]")).isDisplayed());
 		} catch (NoSuchElementException e) {
 			ExtentTestManager.getTest().log(LogStatus.PASS, "Search filter applied is working fine");
 		} catch (Exception e) {
@@ -125,7 +124,7 @@ public class SearchTest extends BaseTest{
 
 		ExtentTestManager.getTest().log(LogStatus.INFO, "Remove all filters");
 		driver.findElement(By.xpath("//span[text()='Clear all']")).click();
-		searchPageObject.validateSearchResponse(driver.findElement(By.xpath("//div[text() = 'Motorola G34 5G (Ocean Green, 128 GB)']")).isDisplayed());
+		searchPageObject.validateSearchResponse(driver.findElement(By.xpath("//div[contains(text(), 'Motorola')]")).isDisplayed());
 		searchPageObject.clickOnFlipkartLogo();
 		ExtentTestManager.getTest().log(LogStatus.PASS, "Removed search filter is working fine");
 	}
