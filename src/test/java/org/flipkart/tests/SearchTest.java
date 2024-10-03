@@ -48,7 +48,7 @@ public class SearchTest extends BaseTest{
 		SearchPageObject searchPageObject = new SearchPageObject();
 		ExtentTestManager.startTest("verifySearchWithSpecialCharacters", "TC015");
 		
-		searchPageObject.searchProduct("R@!me X12 5&");
+		searchPageObject.searchProduct("Re@!me X12 5&");
 		searchPageObject.validateSearchResponse(driver.findElement(By.xpath("//div[text() = 'realme 12x 5G (Twilight Purple, 128 GB)']")).isDisplayed());
 		searchPageObject.clickOnFlipkartLogo();
 	}
@@ -90,9 +90,9 @@ public class SearchTest extends BaseTest{
 		SearchPageObject searchPageObject = new SearchPageObject();
 		ExtentTestManager.startTest("verifyNavigationToSuggestion", "TC019");
 
-		searchPageObject.enterProductName("groc");
+		searchPageObject.enterProductName("dryf");
 		ExtentTestManager.getTest().log(LogStatus.INFO, "Click on suggestion");
-		driver.findElement(By.xpath("//a[contains(@href, '/search?q=grocery')]//div[text()='in Dry Fruit, Nut & Seed']")).click();
+		driver.findElement(By.xpath("//a[contains(@href, '/search?q=dry')]//div[text()='in Dry Fruit, Nut & Seed']")).click();
 		searchPageObject.validateSearchResponse(driver.findElement(By.xpath("//a[contains(text(),'Cashew')]")).isDisplayed());
 		searchPageObject.clickOnFlipkartLogo();
 	}

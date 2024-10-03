@@ -1,37 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+<testng-results ignored="4" total="27" passed="23" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-07-23T23:16:30 IST" name="Default suite" finished-at="2024-07-23T23:16:52 IST" duration-ms="21886">
+  <suite started-at="2024-10-03T21:52:57 IST" name="Suite" finished-at="2024-10-03T21:54:53 IST" duration-ms="116053">
     <groups>
     </groups>
-    <test started-at="2024-07-23T23:16:30 IST" name="Default test" finished-at="2024-07-23T23:16:52 IST" duration-ms="21886">
-      <class name="org.flipkart.tests.SearchTest">
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:org.flipkart.tests.SearchTest@449a4f23]" started-at="2024-07-23T23:16:22 IST" name="beforeClass" finished-at="2024-07-23T23:16:30 IST" duration-ms="8148" status="PASS">
+    <test started-at="2024-10-03T21:52:57 IST" name="Test" finished-at="2024-10-03T21:54:53 IST" duration-ms="116053">
+      <class name="org.flipkart.tests.LoginPopupTest">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:org.flipkart.tests.LoginPopupTest@4c5204af]" started-at="2024-10-03T21:52:51 IST" name="beforeClass" finished-at="2024-10-03T21:52:57 IST" duration-ms="5754" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method signature="verifySearchResultAfterApplyingFilter()[pri:9, instance:org.flipkart.tests.SearchTest@449a4f23]" started-at="2024-07-23T23:16:30 IST" name="verifySearchResultAfterApplyingFilter" finished-at="2024-07-23T23:16:33 IST" duration-ms="3008" status="PASS">
+        <test-method signature="verifyPresenceOfLoginPopup()[pri:1, instance:org.flipkart.tests.LoginPopupTest@4c5204af]" started-at="2024-10-03T21:52:57 IST" name="verifyPresenceOfLoginPopup" finished-at="2024-10-03T21:53:08 IST" duration-ms="10336" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifySearchResultAfterApplyingFilter -->
-        <test-method signature="verifySearchResultAfterRemovingFilter()[pri:10, instance:org.flipkart.tests.SearchTest@449a4f23]" started-at="2024-07-23T23:16:33 IST" name="verifySearchResultAfterRemovingFilter" finished-at="2024-07-23T23:16:36 IST" depends-on-methods="org.flipkart.tests.SearchTest.verifySearchResultAfterApplyingFilter" duration-ms="2476" status="PASS">
+        </test-method> <!-- verifyPresenceOfLoginPopup -->
+        <test-method signature="closeLoginPopup()[pri:2, instance:org.flipkart.tests.LoginPopupTest@4c5204af]" started-at="2024-10-03T21:53:08 IST" name="closeLoginPopup" finished-at="2024-10-03T21:53:18 IST" depends-on-methods="org.flipkart.tests.LoginPopupTest.verifyPresenceOfLoginPopup" duration-ms="10030" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifySearchResultAfterRemovingFilter -->
-        <test-method signature="verifySearchResultAfterApplyingSort()[pri:11, instance:org.flipkart.tests.SearchTest@449a4f23]" started-at="2024-07-23T23:16:36 IST" name="verifySearchResultAfterApplyingSort" finished-at="2024-07-23T23:16:42 IST" duration-ms="6643" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifySearchResultAfterApplyingSort -->
-        <test-method signature="verifyNavigationToMultiplePagesForSearchItems()[pri:12, instance:org.flipkart.tests.SearchTest@449a4f23]" started-at="2024-07-23T23:16:42 IST" name="verifyNavigationToMultiplePagesForSearchItems" finished-at="2024-07-23T23:16:52 IST" duration-ms="9689" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyNavigationToMultiplePagesForSearchItems -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:org.flipkart.tests.SearchTest@449a4f23]" started-at="2024-07-23T23:16:52 IST" name="afterClass" finished-at="2024-07-23T23:16:52 IST" duration-ms="224" status="PASS">
+        </test-method> <!-- closeLoginPopup -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:org.flipkart.tests.LoginPopupTest@4c5204af]" started-at="2024-10-03T21:54:53 IST" name="afterClass" finished-at="2024-10-03T21:54:54 IST" duration-ms="242" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
+      </class> <!-- org.flipkart.tests.LoginPopupTest -->
+      <class name="org.flipkart.tests.SearchTest">
+        <test-method signature="verifyPresenceOfSearchOptions()[pri:1, instance:org.flipkart.tests.SearchTest@3163987e]" started-at="2024-10-03T21:54:09 IST" name="verifyPresenceOfSearchOptions" finished-at="2024-10-03T21:54:09 IST" duration-ms="103" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyPresenceOfSearchOptions -->
+        <test-method signature="verifySearchWithValidInput()[pri:2, instance:org.flipkart.tests.SearchTest@3163987e]" started-at="2024-10-03T21:54:09 IST" name="verifySearchWithValidInput" finished-at="2024-10-03T21:54:13 IST" duration-ms="3837" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySearchWithValidInput -->
+        <test-method signature="verifySearchWithInvalidInput()[pri:3, instance:org.flipkart.tests.SearchTest@3163987e]" started-at="2024-10-03T21:54:13 IST" name="verifySearchWithInvalidInput" finished-at="2024-10-03T21:54:17 IST" duration-ms="3927" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySearchWithInvalidInput -->
+        <test-method signature="verifySearchWithSpecialCharacters()[pri:4, instance:org.flipkart.tests.SearchTest@3163987e]" started-at="2024-10-03T21:54:17 IST" name="verifySearchWithSpecialCharacters" finished-at="2024-10-03T21:54:21 IST" duration-ms="3885" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySearchWithSpecialCharacters -->
+        <test-method signature="verifySearchWithoutInput()[pri:5, instance:org.flipkart.tests.SearchTest@3163987e]" started-at="2024-10-03T21:54:21 IST" name="verifySearchWithoutInput" finished-at="2024-10-03T21:54:23 IST" duration-ms="1891" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySearchWithoutInput -->
+        <test-method signature="verifyRecentSearchAvailability()[pri:6, instance:org.flipkart.tests.SearchTest@3163987e]" started-at="2024-10-03T21:54:23 IST" name="verifyRecentSearchAvailability" finished-at="2024-10-03T21:54:29 IST" duration-ms="5922" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyRecentSearchAvailability -->
+        <test-method signature="verifyProductSuggestionWithPartialName()[pri:7, instance:org.flipkart.tests.SearchTest@3163987e]" started-at="2024-10-03T21:54:29 IST" name="verifyProductSuggestionWithPartialName" finished-at="2024-10-03T21:54:31 IST" duration-ms="1909" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyProductSuggestionWithPartialName -->
+        <test-method signature="verifyNavigationToSuggestion()[pri:8, instance:org.flipkart.tests.SearchTest@3163987e]" started-at="2024-10-03T21:54:31 IST" name="verifyNavigationToSuggestion" finished-at="2024-10-03T21:54:35 IST" duration-ms="4248" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyNavigationToSuggestion -->
+        <test-method signature="verifySearchResultAfterApplyingFilter()[pri:9, instance:org.flipkart.tests.SearchTest@3163987e]" started-at="2024-10-03T21:54:35 IST" name="verifySearchResultAfterApplyingFilter" finished-at="2024-10-03T21:54:38 IST" duration-ms="2399" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySearchResultAfterApplyingFilter -->
+        <test-method signature="verifySearchResultAfterRemovingFilter()[pri:10, instance:org.flipkart.tests.SearchTest@3163987e]" started-at="2024-10-03T21:54:38 IST" name="verifySearchResultAfterRemovingFilter" finished-at="2024-10-03T21:54:40 IST" depends-on-methods="org.flipkart.tests.SearchTest.verifySearchResultAfterApplyingFilter" duration-ms="2067" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySearchResultAfterRemovingFilter -->
+        <test-method signature="verifySearchResultAfterApplyingSort()[pri:11, instance:org.flipkart.tests.SearchTest@3163987e]" started-at="2024-10-03T21:54:40 IST" name="verifySearchResultAfterApplyingSort" finished-at="2024-10-03T21:54:46 IST" duration-ms="6480" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySearchResultAfterApplyingSort -->
+        <test-method signature="verifyNavigationToMultiplePagesForSearchItems()[pri:12, instance:org.flipkart.tests.SearchTest@3163987e]" started-at="2024-10-03T21:54:46 IST" name="verifyNavigationToMultiplePagesForSearchItems" finished-at="2024-10-03T21:54:53 IST" duration-ms="6763" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyNavigationToMultiplePagesForSearchItems -->
       </class> <!-- org.flipkart.tests.SearchTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      <class name="org.flipkart.tests.HeaderNavigationTest">
+        <test-method signature="verifyFlipkartHomeNavigation()[pri:1, instance:org.flipkart.tests.HeaderNavigationTest@589b028e]" started-at="2024-10-03T21:53:18 IST" name="verifyFlipkartHomeNavigation" finished-at="2024-10-03T21:53:21 IST" duration-ms="3086" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyFlipkartHomeNavigation -->
+        <test-method signature="verifyFlipkartPlusNavigation()[pri:2, instance:org.flipkart.tests.HeaderNavigationTest@589b028e]" started-at="2024-10-03T21:53:21 IST" name="verifyFlipkartPlusNavigation" finished-at="2024-10-03T21:53:24 IST" duration-ms="3102" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyFlipkartPlusNavigation -->
+        <test-method signature="verifyLoginPageNavigation()[pri:3, instance:org.flipkart.tests.HeaderNavigationTest@589b028e]" started-at="2024-10-03T21:53:24 IST" name="verifyLoginPageNavigation" finished-at="2024-10-03T21:53:32 IST" duration-ms="7550" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLoginPageNavigation -->
+        <test-method signature="verifyCartNavigation()[pri:4, instance:org.flipkart.tests.HeaderNavigationTest@589b028e]" started-at="2024-10-03T21:53:32 IST" name="verifyCartNavigation" finished-at="2024-10-03T21:53:38 IST" duration-ms="5921" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCartNavigation -->
+        <test-method signature="verifyBecomeASellerNavigation()[pri:5, instance:org.flipkart.tests.HeaderNavigationTest@589b028e]" started-at="2024-10-03T21:53:38 IST" name="verifyBecomeASellerNavigation" finished-at="2024-10-03T21:53:46 IST" duration-ms="8226" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyBecomeASellerNavigation -->
+        <test-method signature="verifyNotificationPreferenceNavigation()[pri:6, instance:org.flipkart.tests.HeaderNavigationTest@589b028e]" started-at="2024-10-03T21:53:46 IST" name="verifyNotificationPreferenceNavigation" finished-at="2024-10-03T21:53:52 IST" duration-ms="5300" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyNotificationPreferenceNavigation -->
+        <test-method signature="verifyCustomerCarePageNavigation()[pri:7, instance:org.flipkart.tests.HeaderNavigationTest@589b028e]" started-at="2024-10-03T21:53:52 IST" name="verifyCustomerCarePageNavigation" finished-at="2024-10-03T21:53:57 IST" duration-ms="5550" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCustomerCarePageNavigation -->
+        <test-method signature="verifyAdvertisePageNavigation()[pri:8, instance:org.flipkart.tests.HeaderNavigationTest@589b028e]" started-at="2024-10-03T21:53:57 IST" name="verifyAdvertisePageNavigation" finished-at="2024-10-03T21:54:03 IST" duration-ms="5915" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAdvertisePageNavigation -->
+        <test-method signature="verifyDownloadAppPageNavigation()[pri:9, instance:org.flipkart.tests.HeaderNavigationTest@589b028e]" started-at="2024-10-03T21:54:03 IST" name="verifyDownloadAppPageNavigation" finished-at="2024-10-03T21:54:09 IST" duration-ms="5590" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyDownloadAppPageNavigation -->
+      </class> <!-- org.flipkart.tests.HeaderNavigationTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

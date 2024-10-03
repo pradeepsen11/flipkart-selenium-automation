@@ -51,7 +51,7 @@ public class SearchPageObject extends BaseTest {
 			GenericFunctions.waitForElementClickable(searchPage.flipkartLogo);
 			searchPage.flipkartLogo.click();
 		} catch (NoSuchElementException e) {
-			ExtentTestManager.getTest().log(LogStatus.FAIL, "Flipkart logo not found on current screen");;
+			ExtentTestManager.getTest().log(LogStatus.FAIL, "Flipkart logo not found on current screen");
 		} catch  (Exception e) {
 			e.printStackTrace();
 			clickOnFlipkartLogo();

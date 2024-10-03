@@ -6,7 +6,7 @@
       <class name="org.flipkart.tests.SearchTest">
         <methods>
           <include name="beforeClass"/>
-          <include name="verifySearchWithSpecialCharacters"/>
+          <include name="verifyNavigationToSuggestion"/>
           <include name="afterClass"/>
         </methods>
       </class> <!-- org.flipkart.tests.SearchTest -->

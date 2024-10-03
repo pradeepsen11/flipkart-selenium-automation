@@ -6,14 +6,15 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="org.flipkart.tests.LoginPopupTest">
+      <class name="org.flipkart.tests.SearchTest">
         <methods>
           <include name="beforeClass"/>
-          <include name="verifyPresenceOfLoginPopup"/>
-          <include name="closeLoginPopup"/>
+          <include name="verifySearchResultAfterRemovingFilter"/>
+          <include name="verifyNavigationToSuggestion"/>
           <include name="afterClass"/>
+          <include name="verifySearchResultAfterApplyingFilter"/>
         </methods>
-      </class> <!-- org.flipkart.tests.LoginPopupTest -->
+      </class> <!-- org.flipkart.tests.SearchTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
