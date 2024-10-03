@@ -22,9 +22,9 @@ public class BaseTest {
 		WebDriverManager.chromedriver().setup();
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--incognito");
-//		options.addArguments("--headless");
-//        options.addArguments("--disable-gpu"); // Applicable to Windows OS only
-//        options.addArguments("--window-size=1920,1080");
+		options.addArguments("--headless");
+        options.addArguments("--disable-gpu"); // Applicable to Windows OS only
+        options.addArguments("--window-size=1920,1080");
 		driver = new ChromeDriver(options);
 		driver.manage().window().maximize();
 		driver.get("https://www.flipkart.com/");
